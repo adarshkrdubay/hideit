@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hideit</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Hideit</h1>
+    </header>
+    <nav>
+        <a href="#">Home</a>
+        <a href="https://github.com/adarshkrdubay/hideit" target="_blank">GitHub</a>
+    </nav>
+    <div id="dropArea" ondragover="allowDrop(event)" ondrop="handleDrop(event)">
+        <p id="fileName">Drag and drop a file here, or click to select a file.</p>
+        <input type="file" id="fileInput" onchange="handleFileSelect(event)" />
+        <label for="fileInput">Choose a File</label>
+        <div id="options" style="display:none;">
+            <input type="text" id="encryptionKey" placeholder="Enter Key" />
+            <button onclick="encryptFile()">Encrypt File</button>
+            <button onclick="decryptFile()">Decrypt File</button>
+            <a id="downloadLink" onclick="resetForm()" download>Download File</a>
+        </div>
+    </div>
+    <footer>
+        &copyAdarshkrdubay
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
