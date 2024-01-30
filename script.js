@@ -81,7 +81,7 @@ function setDownloadAttributes(blob, originalFileName, operation) {
     } else if (operation === 'encrypt' && originalFileName.includes('hideit_decrypt')) {
         newFileName = originalFileName.replace('hideit_decrypt', 'hideit_encrypt');
     } else {
-        newFileName = originalFileName;
+        newFileName = `${originalFileName.replace(`.${extension}`, '')}_hideit_${operation}.${extension}`;
     }
     downloadLink.href = URL.createObjectURL(blob);
     downloadLink.download = newFileName;
